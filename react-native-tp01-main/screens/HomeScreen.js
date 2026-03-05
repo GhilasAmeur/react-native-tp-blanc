@@ -1,18 +1,27 @@
-import { ButtonCustom, HeaderTitle, ScreenWrapper } from '../components'
+import { useState } from 'react'
+import { ButtonCustom, HeaderTitle, InputCustom, ScreenWrapper } from '../components'
+import { LastNameError } from '../components/LastNameError'
+import { Tittle } from '../components/Tittle'
 
 export const HomeScreen = ({ navigation }) => {
+  const [prenom, setPrenom] = useState("")
   return (
     <ScreenWrapper>
-      <HeaderTitle text="Connexion / Inscription" />
-      <ButtonCustom
-        text="Connexion"
-        onPress={() => navigation.navigate('Connexion')}
+      <HeaderTitle text="Bienvenue !" />
+      <Tittle text="Entrez votre prénom pour jouer" />
+
+      <InputCustom
+        placeholder="Entrez votre prénom pour jouer"
+        onChangeText={setPrenom}
+        value={prenom}
       />
+      {!prenom && <LastNameError text="Veuillez entrer un prénom" />}
+
       <ButtonCustom
-        text="Inscription"
-        onPress={() => navigation.navigate('Inscription')}
-        secondary
+        text="JOUER !"
+        onPress={() => alert(prenom)}
+        //  onPress={() =>{ navigation.navigate("Connexion")}}
       />
     </ScreenWrapper>
-  )
+  );
 }
