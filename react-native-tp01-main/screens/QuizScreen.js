@@ -6,18 +6,18 @@ import { Tittle } from "../components/Tittle";
 export const QuizScreen = (navigation) =>{
     const [score, setScore] = useState(0)
     const [question, setQuestion] = useState(1)
-    const [time, setTime] = useState(null)
+   // const [time, setTime] = useState(null)
     const [compteur, setCompteur] = useState(0)
 
-//      useEffect(() =>{
-// setTime(() =>{
-
-// })
-//         setTimeout(() => {
-//             1000
-//         })
-
-//     },[time])
+const pageSuivante = () => {
+    //alert("je suis la page suivante")
+    //console.log(data.length)
+     if(compteur < data.length -1 && question < data.length){
+          setCompteur(() => compteur + 1 )
+         setQuestion(() => question + 1)
+     }
+   
+}
 
     return (
       //console.log(data[0].question)
@@ -38,7 +38,7 @@ export const QuizScreen = (navigation) =>{
         <ButtonCustom text={data[compteur].reponse2} secondary></ButtonCustom>
         <ButtonCustom text={data[compteur].reponse3} secondary></ButtonCustom>
         <ButtonCustom text={data[compteur].reponse4} secondary></ButtonCustom>
-        <ButtonCustom text = "VALIDER"/>
+        <ButtonCustom text = "VALIDER" onPress={pageSuivante}/>
       </ScreenWrapper>
     );
 }
