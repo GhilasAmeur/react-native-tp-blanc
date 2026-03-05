@@ -1,6 +1,6 @@
 import {Text} from 'react-native'
 
-export const Test = ()=>{
+export const TestGhilas = ()=>{
     return (
         <Text>
 
