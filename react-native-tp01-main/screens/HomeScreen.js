@@ -11,7 +11,7 @@ export const HomeScreen = ({ navigation }) => {
       <Tittle text="Entrez votre prénom pour jouer" />
 
       <InputCustom
-        placeholder="Entrez votre prénom pour jouer"
+        placeholder="Entrez votre prénom"
         onChangeText={setPrenom}
         value={prenom}
       />
@@ -19,8 +19,8 @@ export const HomeScreen = ({ navigation }) => {
 
       <ButtonCustom
         text="JOUER !"
-        onPress={() => alert(prenom)}
-        //  onPress={() =>{ navigation.navigate("Connexion")}}
+        //onPress={() => alert(prenom)}
+        onPress={() =>{ navigation.navigate("Quiz")}}
       />
     </ScreenWrapper>
   );
