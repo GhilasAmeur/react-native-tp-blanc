@@ -22,9 +22,9 @@ export const QuizScreen = ({navigation, route}) =>{
 
 const pageSuivante = () => {
    
-console.log(prenom)
+//console.log(prenom)
   if (reponse === lesReponses[compteur] ) {
-    setScore(score + 1);
+    setScore((score) => score + 1);
   }
 
   if (compteur  === data.length - 1) {
