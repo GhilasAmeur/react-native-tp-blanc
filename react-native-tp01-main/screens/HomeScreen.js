@@ -5,6 +5,14 @@ import { Tittle } from '../components/Tittle'
 
 export const HomeScreen = ({ navigation }) => {
   const [prenom, setPrenom] = useState("")
+  const prenomNonVide = () =>{
+
+    //alert("cc")
+    // if(prenom.trim() === ""){
+    //   alert("Prénom obligatoire !")
+    //   return 
+    // }
+  }
   return (
     <ScreenWrapper>
       <HeaderTitle text="Bienvenue !" />
@@ -20,7 +28,9 @@ export const HomeScreen = ({ navigation }) => {
       <ButtonCustom
         text="JOUER !"
         //onPress={() => alert(prenom)}
-        onPress={() =>{ navigation.navigate("Quiz")}}
+        onPress={() =>{
+          prenomNonVide();
+           navigation.navigate("Quiz", prenom)}}
       />
     </ScreenWrapper>
   );
